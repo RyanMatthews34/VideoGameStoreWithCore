@@ -15,5 +15,6 @@ namespace VideoGameStoreWithCore.Model
         }
         //grants the db class acess o the ablum model (auto generated in the web app)
         public DbSet<VideoGames> videoGames { get; set; }
+        public DbSet<PlayerInfo> playerInfos { get; set; }
     }
 }
