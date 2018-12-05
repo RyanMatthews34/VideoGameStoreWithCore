@@ -42,7 +42,7 @@ namespace VideoGameStoreWithCore.Controllers
             return Ok(album);
         }
 
-        // POST: api/albums
+        // POST: api/VideoGames
         [HttpPost]
         public ActionResult Post([FromBody] VideoGames videoGames)
         {
@@ -56,7 +56,7 @@ namespace VideoGameStoreWithCore.Controllers
             return CreatedAtAction("Post", videoGames);
         }
 
-        // PUT: api/albums/5
+        // PUT: api/VideoGames/5
         [HttpPut("{id}")]
         public ActionResult Put(int id, [FromBody] VideoGames videoGames)
         {
@@ -70,7 +70,7 @@ namespace VideoGameStoreWithCore.Controllers
             return NoContent();
         }
 
-        // DELETE: api/albums/5
+        // DELETE: api/VideoGames/5
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {

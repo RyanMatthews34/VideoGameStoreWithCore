@@ -28,7 +28,7 @@ namespace VideoGameStoreWithCore.Controllers
             return db.playerInfos.OrderBy(a => a.PlayerName).ToList();
         }
 
-        // GET: api/albums/5
+        // GET: api/Players/5
         [HttpGet("{id}")]
         public ActionResult Get(int id)
         {
@@ -41,7 +41,7 @@ namespace VideoGameStoreWithCore.Controllers
             return Ok(player);
         }
 
-        // POST: api/albums
+        // POST: api/Players
         [HttpPost]
         public ActionResult Post([FromBody] PlayerInfo playerInfos)
         {
@@ -55,7 +55,7 @@ namespace VideoGameStoreWithCore.Controllers
             return CreatedAtAction("Post", playerInfos);
         }
 
-        // PUT: api/albums/5
+        // PUT: api/Players/5
         [HttpPut("{id}")]
         public ActionResult Put(int id, [FromBody] PlayerInfo playerInfos)
         {
@@ -69,7 +69,7 @@ namespace VideoGameStoreWithCore.Controllers
             return NoContent();
         }
 
-        // DELETE: api/albums/5
+        // DELETE: api/Players/5
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
