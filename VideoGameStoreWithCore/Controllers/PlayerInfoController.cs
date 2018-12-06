@@ -16,7 +16,7 @@ namespace VideoGameStoreWithCore.Controllers
         private VideoGameStoreModel db;
 
         //constructor - connect to db as soon as this controller is instantiated
-        public PlayerInfoController()
+        public PlayerInfoController(VideoGameStoreModel db)
         {
             this.db = db;
         }
@@ -25,14 +25,14 @@ namespace VideoGameStoreWithCore.Controllers
         [HttpGet]
         public IEnumerable<PlayerInfo> Get()
         {
-            return db.playerInfo.OrderBy(a => a.PlayerName).ToList();
+            return db.PlayerInfo;
         }
 
         // GET: api/Players
         [HttpGet("{id}")]
         public ActionResult Get(int id)
         {
-            PlayerInfo player = db.playerInfo.Find(id);
+            PlayerInfo player = db.PlayerInfo.Find(id);
 
             if (player == null)
             {
@@ -50,7 +50,7 @@ namespace VideoGameStoreWithCore.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.playerInfo.Add(playerInfos);
+            db.PlayerInfo.Add(playerInfos);
             db.SaveChanges();
             return CreatedAtAction("Post", playerInfos);
         }
@@ -73,14 +73,14 @@ namespace VideoGameStoreWithCore.Controllers
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
-            PlayerInfo playerInfos = db.playerInfo.Find(id);
+            PlayerInfo playerInfos = db.PlayerInfo.Find(id);
 
             if (playerInfos == null)
             {
                 return NotFound();
             }
 
-            db.playerInfo.Remove(playerInfos);
+            db.PlayerInfo.Remove(playerInfos);
             db.SaveChanges();
             return Ok();
         }

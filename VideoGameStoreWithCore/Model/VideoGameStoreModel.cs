@@ -14,7 +14,7 @@ namespace VideoGameStoreWithCore.Model
 
         }
         //grants the db class acess to the video model (auto generated in the web app)
-        public DbSet<VideoGames> videoGames { get; set; }
-        public DbSet<PlayerInfo> playerInfo { get; set; }
+        public DbSet<VideoGames> VideoGameInfo { get; set; }
+        public DbSet<PlayerInfo> PlayerInfo { get; set; }
     }
 }
