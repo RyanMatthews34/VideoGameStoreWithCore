@@ -22,7 +22,5 @@ namespace VideoGameStoreWithCore.Model
         public int PlayerTimePlayed { get; set; }
 
         public int VideoGameID { get; set; }
-
-        public virtual VideoGameInfo VideoGameInfo { get; set; }
     }
 }
