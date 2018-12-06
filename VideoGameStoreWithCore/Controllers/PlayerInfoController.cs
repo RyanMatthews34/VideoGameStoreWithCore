@@ -25,14 +25,14 @@ namespace VideoGameStoreWithCore.Controllers
         [HttpGet]
         public IEnumerable<PlayerInfo> Get()
         {
-            return db.playerInfos.OrderBy(a => a.PlayerName).ToList();
+            return db.playerInfo.OrderBy(a => a.PlayerName).ToList();
         }
 
-        // GET: api/Players/5
+        // GET: api/Players
         [HttpGet("{id}")]
         public ActionResult Get(int id)
         {
-            PlayerInfo player = db.playerInfos.Find(id);
+            PlayerInfo player = db.playerInfo.Find(id);
 
             if (player == null)
             {
@@ -50,12 +50,12 @@ namespace VideoGameStoreWithCore.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.playerInfos.Add(playerInfos);
+            db.playerInfo.Add(playerInfos);
             db.SaveChanges();
             return CreatedAtAction("Post", playerInfos);
         }
 
-        // PUT: api/Players/5
+        // PUT: api/Players/
         [HttpPut("{id}")]
         public ActionResult Put(int id, [FromBody] PlayerInfo playerInfos)
         {
@@ -69,18 +69,18 @@ namespace VideoGameStoreWithCore.Controllers
             return NoContent();
         }
 
-        // DELETE: api/Players/5
+        // DELETE: api/Players
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
-            PlayerInfo playerInfos = db.playerInfos.Find(id);
+            PlayerInfo playerInfos = db.playerInfo.Find(id);
 
             if (playerInfos == null)
             {
                 return NotFound();
             }
 
-            db.playerInfos.Remove(playerInfos);
+            db.playerInfo.Remove(playerInfos);
             db.SaveChanges();
             return Ok();
         }

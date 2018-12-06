@@ -23,6 +23,6 @@ namespace VideoGameStoreWithCore.Model
 
         public int VideoGameID { get; set; }
 
-        public virtual VideoGames VideoGameInfo { get; set; }
+        public virtual VideoGameInfo VideoGameInfo { get; set; }
     }
 }

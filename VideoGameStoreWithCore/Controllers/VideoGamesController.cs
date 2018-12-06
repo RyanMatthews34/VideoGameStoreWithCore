@@ -29,7 +29,7 @@ namespace VideoGameStoreWithCore.Controllers
             return db.videoGames.OrderBy(a => a.VideoGameName).ToList();
         }
 
-        // GET: api/albums/5
+        // GET: api/VideoGames
         [HttpGet("{id}")]
         public ActionResult Get(int id)
         {
@@ -56,7 +56,7 @@ namespace VideoGameStoreWithCore.Controllers
             return CreatedAtAction("Post", videoGames);
         }
 
-        // PUT: api/VideoGames/5
+        // PUT: api/VideoGames
         [HttpPut("{id}")]
         public ActionResult Put(int id, [FromBody] VideoGames videoGames)
         {
@@ -70,7 +70,7 @@ namespace VideoGameStoreWithCore.Controllers
             return NoContent();
         }
 
-        // DELETE: api/VideoGames/5
+        // DELETE: api/VideoGames
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
